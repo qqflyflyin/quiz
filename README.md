@@ -28,10 +28,10 @@
 
 Клонировать репозиторий и перейти в него в командной строке:
 ```python
-git clone git@github.com:qqflyflyin/guiz.git
+git clone git@github.com:qqflyflyin/quiz.git
 ```
 ```python
-cd guiz
+cd quiz
 ```
 Установить зависимости из файла requirements.txt:
 ```python
