@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1>Игра окончена!</h1>
+    <p class="fs-2">
+        <strong>{{ first_name }} {{ last_name }}</strong>,
+        твой результат: <span class="text-success">{{ score }}</span> из {{ total }}
+    </p>
+    <a href="{% url 'registration' %}" class="btn btn-primary">Играть снова (другой игрок)</a>
+    <a href="{% url 'game' %}" class="btn btn-outline-secondary">Повторить (тот же игрок)</a>
+</div>
+{% endblock %}

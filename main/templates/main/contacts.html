@@ -1,0 +1,51 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Контакты
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 shadow p-4 rounded border">
+
+        <h2>Контакты</h2>
+            {% if success %}
+                <div class="alert alert-success">
+                    Ваше сообщение отправлено! Спасибо.
+                </div>
+                <a href="{% url 'home' %}" class="btn btn-success btn-lg">На главную</a>
+            {% else %}
+                <p>
+                    Если есть идеи или какие-то пожелания, заполните форму ниже:
+                </p>
+
+                <form method="post">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label text-muted small">Ваше имя</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label text-muted small">Ваш e-mail</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-muted small">Ваше сообщение</label>
+                        <textarea name="message" class="form-control" rows="8"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-lg">
+                        Отправить
+                    </button>
+                </form>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+

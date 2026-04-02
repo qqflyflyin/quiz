@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 shadow p-4 rounded border">
+            {% if error %}
+                <div class="alert alert-warning">{{ error }}</div>
+            {% else %}
+                <div class="mb-3">
+                    <span class="badge bg-secondary">Вопрос № {{ current_number }}</span>
+                </div>
+                <h2>{{ question.text }}</h2>
+
+                <form method="post" class="mt-4">
+                    {% csrf_token %}
+                    <button name="answer" value="{{ question.option1 }}" class="btn btn-outline-primary btn-lg m-2">
+                        {{ question.option1 }}
+                    </button>
+                    <button name="answer" value="{{ question.option2 }}" class="btn btn-outline-primary btn-lg m-2">
+                        {{ question.option2 }}
+                    </button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
