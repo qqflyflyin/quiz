@@ -1,3 +1,4 @@
+'''Модели данных для системы'''
 from django.db import models
 
 
